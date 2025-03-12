@@ -1,0 +1,40 @@
+<div class="card flex justify-center">
+    <p-button label="Check"  />
+    <p-button label="Toggle"  (onClick)="toggleDarkMode()"  
+    severity="secondary"/>
+</div>
+
+<div class="mt-3">
+    <h3>Selected View: {{ selectedView }}</h3>
+    <h3>Selected Date: {{ getFormattedDateResult() }}</h3>
+  </div>
+  <div class="custom-date-container">
+    <div class="date-selector" (click)="togglePanel($event)">
+      <span class="current-date">{{ getFormattedCurrentDate() }}</span>
+      <span class="dropdown-arrow">&#9660;</span>
+    </div>
+    
+    <div *ngIf="isPanelVisible" class="date-panel" 
+         [@panelAnimation]>
+      <div class="flex-row">
+        <div class="dropdown-container">
+          <p-dropdown [options]="viewOptions" [(ngModel)]="selectedView" 
+                    (onChange)="updateDateSelection()" 
+                    placeholder="Select View"
+                    [style]="{width: '100%'}">
+          </p-dropdown>
+        </div>
+        
+        <div class="calendar-container">
+          <p-calendar [(ngModel)]="dateRange"
+                    [inline]="true" 
+                    [showWeek]="selectedView === 'week'"
+                    selectionMode="range"
+                    (onSelect)="onDateSelect($event)">
+          </p-calendar>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 

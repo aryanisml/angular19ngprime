@@ -1,0 +1,36 @@
+.custom-date-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .date-panel {
+    position: absolute;
+    // background: white;
+    border-radius: 6px;
+    // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 1000;
+    padding: 0.5rem;
+    top: calc(100% + 5px);
+    left: 0;
+    min-width: 450px;
+  }
+  
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .dropdown-container {
+    width: 150px;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+  }
+  
+  .calendar-container {
+    width: 280px;
+  }
+  
+  :host ::ng-deep .p-datepicker {
+    border: none !important;
+    box-shadow: none !important;
+  }
