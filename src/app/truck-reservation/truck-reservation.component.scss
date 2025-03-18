@@ -1,0 +1,245 @@
+/* Main container styles */
+.truck-reservation-container {
+    min-height: 100vh;
+    background-color: var(--surface-100);  /* This pulls from the color scheme */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+  }
+ 
+  /* Header styles */
+  .header {
+    background-color: var(--primary-700);  /* Deep blue header from the theme */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-title h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* Stats section */
+  .stats-section {
+    padding: 1rem 2rem;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--text-color-secondary);
+    margin-top: 0.5rem;
+  }
+  
+  /* Main content layout */
+  .main-content {
+    display: flex;
+    padding: 0 2rem 2rem;
+    gap: 1.5rem;
+  }
+  
+  .sidebar {
+    width: 300px;
+    flex-shrink: 0;
+  }
+  
+  .content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Card styles */
+  .filter-card, 
+  .reservations-card,
+  .new-reservation-card,
+  .stats-card {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .filter-card {
+    border-radius: var(--border-radius);
+  }
+  
+  .reservations-card {
+    margin-top: 1rem;
+  }
+  
+  /* Form styling */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .p-field-checkbox {
+    margin-bottom: 0.5rem;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  /* Table styling */
+  .customer-info, 
+  .location-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .customer-name, 
+  .location-time {
+    font-weight: 500;
+  }
+  
+  .customer-phone, 
+  .location-address {
+    font-size: 0.875rem;
+    color: var(--text-color-secondary);
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .main-content {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+    }
+  }
+  
+  /* Override styles to demonstrate theme */
+  :host ::ng-deep {
+    /* Force background color for testing */
+    .p-card {
+      background-color: var(--surface-card, white);
+    }
+    
+    /* Make sure tab menu shows correctly */
+    .p-tabmenu .p-tabmenu-nav {
+      background-color: var(--surface-card);
+      border-color: var(--surface-200);
+    }
+    
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+      background-color: var(--primary-color);
+      color: var(--primary-contrast-color);
+    }
+    
+    /* Ensure inputs follow theme */
+    .p-inputtext {
+      background-color: var(--surface-0);
+      color: var(--text-color);
+      border-color: var(--surface-300);
+    }
+    
+    .p-inputtext:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px var(--primary-200);
+    }
+    
+    /* Table styling */
+    .p-datatable .p-datatable-thead > tr > th {
+      background-color: var(--surface-50);
+      color: var(--text-color);
+      border-bottom-color: var(--surface-200);
+    }
+    
+    .p-datatable .p-datatable-tbody > tr {
+      background-color: var(--surface-card);
+      color: var(--text-color);
+    }
+    
+    .p-datatable .p-datatable-tbody > tr:hover {
+      background-color: var(--surface-100);
+    }
+  }
+  :host ::ng-deep {
+    /* Higher specificity by using multiple selectors */
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link,
+    .p-tabmenu-nav-container .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+      background-color: #eab308 !important; /* Yellow color with !important flag */
+      color: #422006 !important;
+      border-color: #eab308 !important;
+      border-width: 0 0 3px 0 !important; /* Bottom border for active indication */
+    }
+  
+    /* Also target hover state */
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-disabled):hover .p-menuitem-link {
+      background-color: #fef08a !important; /* Light yellow */
+      color: #422006 !important;
+    }
+  }
+
+
+
+  .sampleCard {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+  }
+
+  :host ::ng-deep {
+    .cardSample {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+    .cardSample .p-card {
+      width: 100%;
+      @apply bg-blue-50  border-gray-200 rounded-lg shadow-sm text-lg font-bold text-gray-800 !important;
+      
+    }
+    
+  }
+
+  

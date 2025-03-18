@@ -1,0 +1,104 @@
+/* styles.scss */
+
+/* Import Tailwind's base styles */
+@tailwind base;
+
+/* Import Tailwind's component classes */
+@tailwind components;
+
+/* Import Tailwind's utility classes */
+@tailwind utilities;
+
+/* Typography settings that apply to all components */
+:root {
+  --font-family: 'Avenir','Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 14px;
+  --line-height-base: 1.5;
+  --text-color: #1e293b;
+  --text-color-secondary: #64748b;
+  --heading-color: #0f172a;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(https://partners.rebelmouse.com/gopenske/908c4810-64db-4b46-bb8e-823eb41f68c0.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Improves rendering performance */
+}
+
+/* Base typography styles */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply p-2 sm:p-4 md:p-6 lg:p-8;
+  @apply bg-slate-50;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+/* Paragraphs */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--primary-color, #1e5ad0);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Make PrimeNG components use the same typography */
+.p-component {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+/* Apply typography to specific PrimeNG components */
+.p-card-title {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.p-card-subtitle {
+  color: var(--text-color-secondary);
+}
+
+.p-dialog-title {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+/* Other common text elements */
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+.text-muted { color: var(--text-color-secondary); }

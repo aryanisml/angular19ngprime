@@ -2,20 +2,18 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
-// import Aura from '@primeng/themes/aura'; // ✅ Correct import for PrimeNG 19
 import { routes } from './app.routes';
-import { SwapnilPreset } from './style';
+import  TruckRentalPreset  from './style';
+
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimationsAsync(),
     providePrimeNG({
+      ripple: true,
       theme: {
-        preset: SwapnilPreset, // ✅ Ensures Aura theme is applied
-        options: {
-          darkModeSelector: '.my-app-dark'
+        preset: TruckRentalPreset,
       }
-      },
-      
     }),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
